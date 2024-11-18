@@ -81,7 +81,7 @@ module.exports = {
       } else if (error.code === "ENOENT") {
         errorMessage = ".env file not found. Please create a .env file.";
       } else {
-        // Handle other potential errors
+        console.error("Unhandled error:", error);
       }
 
       await interaction.reply({
