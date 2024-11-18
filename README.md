@@ -1,21 +1,49 @@
-# LoanBot
+# OrmzyLoanBot
 
-Welcome to **OrmzyLoanBot**! A bot to make the life of Ormzy a little easier while he quests for his fortune!! Go Ormzy
+Welcome to **OrmzyLoanBot**! A bot designed to make Ormzy’s journey to fortune a bit easier. 🚀 Get ready to automate your loan applications and manage them like a pro. Go, Ormzy, go! 💰
 
+---
 
+## Overview
 
-The bot will show a form that when filled in will take the collected data, create a new discord channel under a set category and paste in the data and alert all the groups/roles set on the bots 
+OrmzyLoanBot streamlines the loan application process by providing a seamless form submission. When users fill out the form, the bot will automatically:
+
+- Collect the entered data.
+- Create a new Discord channel under a predefined category.
+- Paste the collected data in the new channel.
+- Alert all specified groups or roles.
+
 ---
 
 ## Features
 
-- 💬 **Slash commands to set the bot and apply for the loan
-- 🔒 **Modal to enter the data
+- 💬 **Slash Commands**: Easily set up the bot and apply for loans with intuitive commands.
+- 🔒 **Modal Forms**: Secure, user-friendly modal forms for loan data entry.
+- 📤 **Automated Channel Creation**: Automatically creates a new Discord channel under your specified category.
+- 📣 **Role Alerts**: Notifies the relevant groups/roles when a new loan application is submitted.
 
+---
 
-## Setup
+## Setup Instructions
 
-Use the /setup command and paste in the ID from an existing Category you want the channels created under
-You can get the Category ID by right-clicking on the category and "Copy Channel ID"
+1. **Setup the Bot**:
+   - Use the `/setup` command to configure the bot.
+   - Provide the ID of an existing **category** under which the bot will create the channels. 
+   - To get the Category ID, **right-click** on the category in Discord and select **"Copy Channel ID"**.
 
-Once the setup is complete you can then use the /loanapply commands to input the data
+2. **Apply for a Loan**:
+   - After setup is complete, use the `/loanapply` command to input your loan application data.
+   - The bot will take care of the rest—creating the channel, pasting the data, and alerting the right people!
+
+---
+
+## Example Commands
+
+- `/setup [category_id]`: Set up the bot with a category to create channels under.
+- `/loanapply`: Open a form to input loan application data.
+
+---
+
+## Ready to Go?
+
+With **OrmzyLoanBot**, managing loan applications in Discord is easier than ever. Just follow the steps above and watch Ormzy’s fortune grow! 🌱✨
