@@ -22,6 +22,17 @@ module.exports = {
     try {
       const categoryId = interaction.options.getString("categoryid");
 
+      // validate the user input of category Id to match the channel ID pattern
+
+      const categoryIdPattern = /^\d{18}$/;
+
+      if (!categoryIdPattern.test(categoryId)) {
+        return await interaction.reply({
+          content: `The category ID doesn't match. Please enter a valid 18-digit category ID. For more information, visit [this link](https://discover.hubpages.com/technology/Discord-Channel-ID).`,
+          ephemeral: true,
+        });
+      }
+
       // Save the category ID to the .env file
       const envPath = path.join(__dirname, "..", ".env");
       let envContent = fs.readFileSync(envPath, "utf8");
