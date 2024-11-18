@@ -37,7 +37,7 @@ OrmzyLoanBot streamlines the loan application process by providing a seamless fo
 
 ---
 
-## Example Commands
+## Commands
 
 - `/setup [category_id]`: Set up the bot with a category to create channels under.
 - `/loanapply`: Open a form to input loan application data.
