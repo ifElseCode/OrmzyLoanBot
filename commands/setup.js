@@ -6,11 +6,15 @@ require("dotenv").config();
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("setup")
-    .setDescription("Sets up the category ID for ticket channels")
+    .setDescription(
+      "Set the category ID for an existing category by right clicking on the caterogy and copy channel ID"
+    )
     .addStringOption((option) =>
       option
         .setName("categoryid")
-        .setDescription("The category ID for ticket channels")
+        .setDescription(
+          "Enter the ID for an existing category by right clicking on the caterogy and copy channel ID"
+        )
         .setRequired(true)
     ),
 

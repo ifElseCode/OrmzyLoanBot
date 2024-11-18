@@ -25,28 +25,28 @@ module.exports = {
     // Modal components
 
     const loanTitleInput = new TextInputBuilder()
-      .setMinLength(10)
+      .setMinLength(2)
       .setRequired(true)
       .setCustomId("loanTitle")
       .setLabel("Title and channel name:")
       .setStyle(TextInputStyle.Short);
 
     const loanAmountInput = new TextInputBuilder()
-      .setMinLength(10)
+      .setMinLength(2)
       .setRequired(true)
       .setCustomId("loanAmount")
       .setLabel("Loan Amount:")
       .setStyle(TextInputStyle.Short);
 
     const assetsInput = new TextInputBuilder()
-      .setMinLength(10)
+      .setMinLength(2)
       .setRequired(true)
       .setCustomId("assets")
       .setLabel("Total Assets:")
       .setStyle(TextInputStyle.Short);
 
     const loanTypeInput = new TextInputBuilder()
-      .setMinLength(10)
+      .setMinLength(2)
       .setRequired(true)
       .setCustomId("loantype")
       .setLabel("Loan reason: ")
