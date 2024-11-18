@@ -169,7 +169,7 @@ module.exports = {
         console.log("Channel created:", channel.name);
 
         await channel.send(
-          `**Hello <@${interaction.user.id}>**,Thank you for starting your loan application. Below are the details you provided:\n\n**💰 Loan Amount:** ${loanAmount}\n\n**🏦 Total Assets:** ${assets}\n\n**📂 Loan Type:** ${loantype}\n\n**📝 Additional Information:**\n${notes}\n\nPlease provide any additional details or corrections if necessary. A banker will assist you shortly!`
+          `**Hello <@${userMention}>**,Thank you for starting your loan application. Below are the details you provided:\n\n**💰 Loan Amount:** ${loanAmount}\n\n**🏦 Total Assets:** ${assets}\n\n**📂 Loan Type:** ${loantype}\n\n**📝 Additional Information:**\n${notes}\n\nPlease provide any additional details or corrections if necessary. A banker will assist you shortly!`
         );
       } catch (error) {
         console.error("Error creating channel:", error);
