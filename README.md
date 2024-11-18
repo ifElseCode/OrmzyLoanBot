@@ -15,7 +15,7 @@ The bot will show a form that when filled in will take the collected data, creat
 
 ## Setup
 
-Use the /setup commands and paste in the ID from an existing Category you wish to have the channels appear under
+Use the /setup command and paste in the ID from an existing Category you want the channels created under
 You can get the Category ID by right-clicking on the category and "Copy Channel ID"
 
 Once the setup is complete you can then use the /loanapply commands to input the data
