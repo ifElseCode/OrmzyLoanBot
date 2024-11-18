@@ -9,5 +9,13 @@ The bot will show a form that when filled in will take the collected data, creat
 
 ## Features
 
-- 💬 **Slash commands to setup the bot and to apply for the loan
+- 💬 **Slash commands to set the bot and apply for the loan
 - 🔒 **Modal to enter the data
+
+
+## Setup
+
+Use the /setup commands and paste in the ID from an existing Category you wish to have the channels appear under
+You can get the Category ID by right-clicking on the category and "Copy Channel ID"
+
+Once the setup is complete you can then use the /loanapply commands to input the data
