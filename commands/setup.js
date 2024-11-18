@@ -28,8 +28,7 @@ module.exports = {
 
       if (!categoryIdPattern.test(categoryId)) {
         return await interaction.reply({
-          content:
-            "The category ID doesn't matchPlease enter a valid 18-digit category ID.",
+          content: `The category ID doesn't match. Please enter a valid 18-digit category ID. For more information, visit [this link](https://discover.hubpages.com/technology/Discord-Channel-ID).`,
           ephemeral: true,
         });
       }
