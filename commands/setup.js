@@ -42,12 +42,12 @@ module.exports = {
         // If CATEGORY_ID exists, grab it and then update it
 
         // Grabbing the old category ID
-        const oldCategoryIdRegex = /CATEGORY_ID=(\d{18})/;
+        const oldCategoryIdRegex = /CATEGORY_ID=(.*)/;
         const match = oldCategoryIdRegex.exec(envContent);
         const oldCategoryId = match[1];
 
         envContent = envContent.replace(
-          /CATEGORY_ID=\d{18}/,
+          /CATEGORY_ID=\d+/,
           `CATEGORY_ID=${categoryId}`
         );
 
