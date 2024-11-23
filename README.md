@@ -47,3 +47,57 @@ OrmzyLoanBot streamlines the loan application process by providing a seamless fo
 ## Ready to Go?
 
 With **OrmzyLoanBot**, managing loan applications in Discord is easier than ever. Just follow the steps above and watch Ormzy’s fortune grow! 🌱✨
+
+
+
+** Setup the bot over at discord.com developer portal
+
+### Creating a Discord Bot Application
+1. **Visit the Discord Developer Portal:** Go to https://discord.com/developers/applications.
+2. **Create a New Application:** Click the "New Application" button.
+3. **Add a Bot User:** Under the "Bot" tab, click "Add Bot." 
+4. **Copy the Bot Token:** Keep this token secret. You'll need it to connect your bot to your application.
+
+### Cloning the Repository
+```bash
+git clone [[https://github.com/ifElseCode/OrmzyLoanBot.git](https://github.com/ifElseCode/OrmzyLoanBot.git)]
+cd your-repo
+npm install
+```
+
+### Setting Up Your Bot
+1. **Create a `.env` File:** Create a `.env` file in the root of your project directory.
+2. **Add Your Bot Token:** Add the following line to your `.env` file, replacing `YOUR_BOT_TOKEN` with your actual bot token:
+```bash
+   BOT_TOKEN=YOUR_BOT_TOKEN
+```
+
+## Setting Up Your Discord Bot
+
+**1. Create a New Application:**
+
+* Go to the Discord Developer Portal: https://discord.com/developers/applications
+* Click "New Application"
+* Give your application a name.
+
+**2. Create a Bot User:**
+* In your application's dashboard, navigate to the "Bot" tab.
+* Click "Add Bot."
+* A popup will appear. Click "Yes, do it!"
+* Copy the bot token. **Keep this token secret.**
+
+**3. Invite Your Bot to a Server:**
+* In your application's dashboard, navigate to the "OAuth2" tab.
+* Under "Scopes," select "bot."
+* Under "Bot Permissions," select the permissions you want to grant your bot (e.g., "Send Messages," "Manage Messages," "Manage Roles," etc.).
+* Click "Copy URL."
+* Paste the URL into your browser and follow the instructions to add your bot to your desired server.
+
+**Now that your bot is set up, you can use it to interact with your Discord server.** 
+
+**Remember:**
+* **Keep your bot token secret.**
+* **Follow Discord's guidelines and terms of service.**
+* **Test your bot thoroughly to ensure it works as expected.**
+
+By following these steps, you can create a powerful and versatile Discord bot to enhance your server's functionality.
