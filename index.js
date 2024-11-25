@@ -2,7 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
 require("dotenv").config();
-const { deployCommands } = require("./deploy-commands"); // Correct import
+const { deployCommands } = require("./deploy-commands");
+const db = require("./db/db.js");
 
 const client = new Client({
   intents: [
@@ -43,17 +44,45 @@ client.on("interactionCreate", async (interaction) => {
 client.on("guildCreate", async (guild) => {
   console.log(`Bot added to guild: ${guild.name} (${guild.id})`);
 
-  // Add the guild ID to .env file it not already there
-  const envPath = path.join(__dirname, ".env");
-  const envContent = fs.readFileSync(envPath, "utf8");
-  if (!envContent.includes(`GUILD_ID=${guild.id}`)) {
-    const newEnvContent = envContent + `\nGUILD_ID=${guild.id}\n`;
-    fs.writeFileSync(envPath, newEnvContent);
-    console.log("Guild ID added to .env file.");
+  try {
+    await addGuildToDatabase(guild.id);
+  } catch (error) {
+    console.error("Error adding guild to database:", error);
   }
 
-  await deployCommands(guild.id); // Deploy commands when the bot joins a guild
+  await deployCommands(guild.id);
 });
+
+async function addGuildToDatabase(guildId) {
+  try {
+    const row = await new Promise((resolve, reject) => {
+      db.get(
+        `SELECT guild_id FROM guilds WHERE guild_id = ?`,
+        [guildId],
+        (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        }
+      );
+    });
+
+    if (!row) {
+      await new Promise((resolve, reject) => {
+        db.run(
+          `INSERT INTO guilds (guild_id, category_id) VALUES (?, ?)`,
+          [guildId, null],
+          (err) => {
+            if (err) reject(err);
+            resolve();
+          }
+        );
+      });
+      console.log(`Guild ID ${guildId} added to the database.`);
+    }
+  } catch (error) {
+    console.error("Error adding guild to database:", error);
+  }
+}
 
 // Deploy commands and log in
 (async () => {
