@@ -5,6 +5,8 @@ require("dotenv").config();
 const { deployCommands } = require("./deploy-commands");
 const db = require("./db/db.js");
 
+// File updated
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
