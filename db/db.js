@@ -6,6 +6,7 @@ const db = new sqlite3.Database("./ormzybot.db", (err) => {
     console.error("Error opening database:", err.message);
   } else {
     console.log("Connected to SQLite database.");
+    // Create the 'guilds' table
     db.run(
       `CREATE TABLE IF NOT EXISTS guilds (
         guild_id TEXT PRIMARY KEY,
@@ -13,9 +14,27 @@ const db = new sqlite3.Database("./ormzybot.db", (err) => {
       )`,
       (err) => {
         if (err) {
-          console.error("Error creating table:", err.message);
+          console.error("Error creating 'guilds' table:", err.message);
         } else {
-          console.log("Database table ready.");
+          console.log("Guilds table ready.");
+        }
+      }
+    );
+
+    // Create the 'chanlogs' table
+    db.run(
+      `CREATE TABLE IF NOT EXISTS chanlogs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+        guild_id TEXT,
+        category_id TEXT,
+        channel TEXT,
+        data TEXT
+      )`,
+      (err) => {
+        if (err) {
+          console.error("Error creating 'chanlogs' table:", err.message);
+        } else {
+          console.log("Chanlogs table ready.");
         }
       }
     );
