@@ -97,6 +97,31 @@ module.exports = {
         const channelName = `ticket-${userMention.username}-${loanTitle}`;
         console.log("Generated Channel Name:", channelName);
 
+        const loanData = { loanTitle, loanAmount, assets, loantype, notes };
+
+        const serializedLoanData = JSON.stringify(loanData);
+
+        const insertQuery = `
+    INSERT INTO chanlogs (guild_id, category_id, channel, data)
+    VALUES (?, ?, ?, ?)`; // Ensure your table has a 'data' column of type TEXT.
+
+        db.run(
+          insertQuery,
+          [interaction.guild.id, categoryId, channelName, serializedLoanData],
+          (err) => {
+            if (err) {
+              console.error(
+                "Error inserting into chanlogs table:",
+                err.message
+              );
+            } else {
+              console.log(
+                "Channel data inserted successfully into chanlogs table."
+              );
+            }
+          }
+        );
+
         if (!channelName || channelName.trim() === "") {
           console.error("Channel name is missing or invalid!");
           return await collected.reply({
