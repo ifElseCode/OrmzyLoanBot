@@ -64,7 +64,7 @@ module.exports = {
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
-            .setMaxLength(2000)
+            .setMaxLength(1000)
             .setRequired(false)
             .setCustomId("notes")
             .setLabel("Additional information:")
